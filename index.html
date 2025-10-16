@@ -16,6 +16,7 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
@@ -24,6 +25,19 @@
         </header>
         <main>
             <h1>See what class your freind has</h1>
+            <br>
+            <main class="container mt-5">
+    <div class="dropdown mt-3">
+      <button class="btn btn-primary dropbtn">Friends</button>
+      <div class="dropdown-content">
+        <a data-file="chris.json">Chris</a>
+        <a data-file="drew.json">Drew</a>
+        <a data-file="lexi.json">Lexi</a>
+        <a data-file="zahr.json">Zahr</a>
+      </div>
+    </div>
+
+    <div id="json-display"></div>
         </main>
         <footer>
             <!-- place footer here -->
@@ -40,5 +54,6 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+        <script src="script.js"></script>
     </body>
 </html>
