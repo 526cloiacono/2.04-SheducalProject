@@ -1,17 +1,85 @@
-.dropdown { position: relative; display: inline-block; }
-  .dropdown-content { display: none; position: absolute; background: #f9f9f9; padding: 5px; border: 1px solid #ccc; border-radius: 5px; }
-  .dropdown:hover .dropdown-content { display: block; }
-  .dropdown-content a { display: block; padding: 5px 10px; cursor: pointer; }
+body {
+  background: #f7f9fc;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  color: #0033a0;
+  margin: 0;
+  padding: 20px;
+}
 
-  #card-container { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 15px; }
+h1 {
+  color: #0033a0;
+  margin-bottom: 25px;
+}
 
-  .card {
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 15px;
-    width: 200px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
-  }
+/* Dropdown */
+.dropbtn {
+  background: #0033a0;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-  .card h3 { margin-top: 0; }
+.dropbtn:hover {
+  background: #ffd700;
+  color: #0033a0;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 100; /* Ensure dropdown is on top */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #0033a0;
+  border-radius: 6px;
+  min-width: 150px;
+  z-index: 200; /* Make sure it’s above cards */
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none; /* Remove underline */
+  color: #0033a0;
+}
+
+.dropdown-content a:hover {
+  background: #ffd700;
+  color: #0033a0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Cards */
+#json-display {
+  margin-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  border: 2px solid #0033a0;
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  text-align: left;
+  z-index: 1; /* Cards behind dropdown */
+}
+
+.card h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 4px;
+}
