@@ -2,11 +2,10 @@ var display = document.getElementById("json-display");
 var dropdown = document.getElementsByClassName("dropdown-content")[0];
 var links = dropdown.getElementsByTagName("a");
 
-// Function to display classes using insertAdjacentHTML
 function showClasses(data) {
-  display.innerHTML = ""; // Clear old cards
+  display.innerHTML = ""; // gets rid of old cards so it does not show the old card
 
-  // Sort by period 
+  // Sort by period help with ai 
   data.sort(function(a, b) {
     return a.period.localeCompare(b.period);
   });
@@ -25,18 +24,18 @@ function showClasses(data) {
     `);
   }
 }
-
 async function loadFriend(link) {
-  // Highlight current friend
+  // Highlight current friend help with ai 
   for (var j = 0; j < links.length; j++) links[j].classList.remove("selected");
   link.classList.add("selected");
 
   var file = link.getAttribute("data-file");
   try {
-    var response = await fetch(file);       // go get JSON
+    var response = await fetch(file);       //  gets JSON
     var data = await response.json();       
-    showClasses(data);                      // Display schedule
-  } catch (err) {
+    showClasses(data);                      // Display schedule 
+  } 
+  catch (err) {
     display.innerHTML = '<p style="color:red;">Error loading ' + file + '</p>';
     console.error(err);
   }
